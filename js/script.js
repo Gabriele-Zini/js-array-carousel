@@ -12,7 +12,10 @@ let imagesString = "";
 
 for (let i = 0; i < images.length; i++) {
   const curImage = images[i];
-  imagesString += `<div class="item"> <img src="${curImage}" alt=""></div>`;
+  imagesString += `
+   <div class="item">
+    <img src="${curImage}" alt="">
+   </div>`;
 }
 
 slideElems.innerHTML += imagesString;

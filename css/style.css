@@ -68,6 +68,7 @@
     transform: translate(-50%);
     cursor: pointer;
     z-index: 999;
+    padding: .9rem;
 }
 
 .prev {
@@ -83,8 +84,8 @@
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
     display: block;
     position: absolute;
     top: 35%;
@@ -97,8 +98,8 @@
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
-    border-top: 1px solid black;
-    border-right: 1px solid black;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
     display: block;
     position: absolute;
     bottom: 35%;
