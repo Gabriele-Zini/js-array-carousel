@@ -10,6 +10,7 @@ const container = document.querySelector(".container");
 const items = document.querySelector(".items");
 
 creatImg();
+createPreview();
 setInterval(sliderInterval, 3000);
 
 let autoplay = false;
@@ -40,7 +41,6 @@ function creatImg() {
     const curImage = images[i];
     imageDiv += `<div class="item"><img src="${curImage}" alt=""></div>`;
   }
-
   items.innerHTML += imageDiv;
   return imageDiv;
 }
@@ -72,4 +72,34 @@ function sliderInterval() {
     }
     imageItem[currentIndex].classList.add("active");
   }
+}
+
+function createPreview() {
+  let previewDiv = "";
+  for (let i = 0; i < images.length; i++) {
+    const prevImg = images[i];
+    previewDiv += `<div class="preview-item"><img src="${prevImg}" alt=""></div>`;
+  }
+  document.querySelector(".preview-container").innerHTML = previewDiv;
+  return previewDiv;
+}
+
+const previewItems = document.querySelectorAll(".preview-item");
+
+for (let i = 0; i < previewItems.length; i++) {
+  const preview = previewItems[i];
+  preview.addEventListener("click", function () {
+    document.querySelectorAll(".preview-item").forEach((item) => {
+      item.classList.remove("active");
+    });
+    preview.classList.add("active");
+
+    currentIndex = i;
+    updateMainImage();
+  });
+}
+
+function updateMainImage() {
+  document.querySelector(".item.active").classList.remove("active");
+  imageItem[currentIndex].classList.add("active");
 }
